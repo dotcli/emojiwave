@@ -30,3 +30,7 @@ body {
   left: 230px;
   margin: 0 auto;
 }
+.cell {
+  width: 1em;
+  text-align: center;
+}

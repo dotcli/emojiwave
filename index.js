@@ -109,6 +109,10 @@ function draw()
   window.requestAnimationFrame(draw)
 }
 
+const representation = [
+  " ", "░", "▒", "█", "▓",
+]
+
 function drawDensity()
 {
   var img_data_i;
@@ -137,9 +141,9 @@ function drawDensity()
         canvasCopyImageData.data[img_data_i + 3] = 255; 
       }
 
-      let cappedDens = (dens * 0.05).toFixed(0)
-      if (cappedDens > 9) cappedDens = 9
-      arrCells[ (j * N_ + i) ].innerText = cappedDens
+      let cappedDens = (dens * 0.03).toFixed(0)
+      if (cappedDens > representation.length - 1) cappedDens = representation.length - 1
+      arrCells[ (j * N_ + i) ].innerText = representation[cappedDens]
     }
   }
   

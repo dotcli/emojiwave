@@ -110,7 +110,7 @@ function draw()
 }
 
 const representation = [
-  " ", "░", "▒", "█", "▓",
+  " ", "💀", "😱", "😀", "😍", "😇"
 ]
 
 function drawDensity()

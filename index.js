@@ -2,7 +2,7 @@ const FluidDynamicsSolver = require('./lib/fds')
 
 const B_SHOW_FLUID = false
 
-const LIMIT = 120
+const DENS_SCALE = 0.2
 
 const N_ = 30 // sim complexity...?
 const solver = new FluidDynamicsSolver(N_)
@@ -138,7 +138,8 @@ function drawDensity()
         canvasCopyImageData.data[img_data_i + 3] = 255; 
       }
 
-      const boolDensity = dens < LIMIT
+      const transDens = Math.floor(dens * DENS_SCALE)
+      const boolDensity = (transDens % 2 === 0)
       arrCells[ (j * N_ + i) ].checked = boolDensity
     }
   }

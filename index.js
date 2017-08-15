@@ -2,6 +2,8 @@ const FluidDynamicsSolver = require('./lib/fds')
 
 const B_SHOW_FLUID = false
 
+const LIMIT = 120
+
 const N_ = 30 // sim complexity...?
 const solver = new FluidDynamicsSolver(N_)
 solver.initFDS()
@@ -44,10 +46,9 @@ for(let j = 0; j < N_; j++)
   const row = document.createElement('div')
   for(let i = 0; i < N_; i++)
   {
-    const cell = document.createElement('div')
-    cell.innerText = '1'
+    const cell = document.createElement('input')
+    cell.type = 'checkbox'
     cell.classList.add('cell')
-    cell.style.display = 'inline-block'
     row.appendChild(cell)
     arrCells.push(cell)
   }
@@ -109,10 +110,6 @@ function draw()
   window.requestAnimationFrame(draw)
 }
 
-const representation = [
-  " ", "💀", "😱", "😀", "😍", "😇"
-]
-
 function drawDensity()
 {
   var img_data_i;
@@ -141,9 +138,8 @@ function drawDensity()
         canvasCopyImageData.data[img_data_i + 3] = 255; 
       }
 
-      let cappedDens = (dens * 0.03).toFixed(0)
-      if (cappedDens > representation.length - 1) cappedDens = representation.length - 1
-      arrCells[ (j * N_ + i) ].innerText = representation[cappedDens]
+      const boolDensity = dens < LIMIT
+      arrCells[ (j * N_ + i) ].checked = boolDensity
     }
   }
   

@@ -3,19 +3,16 @@ const FluidDynamicsSolver = require('./lib/fds')
 const N_ = 30 // sim complexity...?
 const ROW = 30
 const COLUMN = 30
-const SENSITIVITY = 0.03
+const SENSITIVITY = 0.05
 
 const representation = [
-  '一',
-  '二',
-  '三',
-  '四',
-  '五',
-  '六',
-  '七',
-  '八',
-  '九',
-  '十',
+  '🌝',
+  '🌕',
+  '🌖',
+  '🌗',
+  '🌘',
+  '🌑',
+  '🌚',
 ]
 
 const solver = new FluidDynamicsSolver(N_)

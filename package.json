@@ -9,7 +9,10 @@
     "deploy": "npm run build && npm run deploy:upload",
     "deploy:upload": "surge -d EmojiWave.surge.sh"
   },
-  "contributors": ["lcb931023", ".CLI"],
+  "contributors": [
+    "lcb931023",
+    ".CLI"
+  ],
   "license": "MIT",
   "babel": {
     "presets": [
@@ -24,7 +27,8 @@
     "uglify-js": "^2"
   },
   "dependencies": {
-    "randomcolor": "",
-    "randf": ""
+    "donger": "^1.2.0",
+    "randf": "",
+    "randomcolor": ""
   }
 }

@@ -5,14 +5,11 @@ const ROW = 30
 const COLUMN = 30
 const SENSITIVITY = 0.05
 
+// const representation = [
+//   " ", "💀", "😱", "😀", "😍", "😇"
+// ]
 const representation = [
-  '🌝',
-  '🌕',
-  '🌖',
-  '🌗',
-  '🌘',
-  '🌑',
-  '🌚',
+  " ", "💀", "😱", "😀", "😍", "😇"
 ]
 
 const solver = new FluidDynamicsSolver(N_)

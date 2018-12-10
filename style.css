@@ -7,6 +7,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  user-select: none;
+  -webkit-user-select: none;
+
 }
 .container {
   position: relative;

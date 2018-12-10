@@ -5,13 +5,6 @@ const ROW = 30
 const COLUMN = 30
 const SENSITIVITY = 0.05
 
-// const representation = [
-//   " ", "💀", "😱", "😀", "😍", "😇"
-// ]
-const representation = [
-  " ", "💀", "😱", "😀", "😍", "😇"
-]
-
 const solver = new FluidDynamicsSolver(N_)
 solver.initFDS()
 
@@ -53,6 +46,49 @@ for(let j = 0; j < ROW; j++)
   }
   renderGrid.appendChild(row)
 }
+
+// fluid content control. changes once in a while.
+const emojiHeaven = [" ", "💀", "😱", "😀", "😍", "😇"]
+const numArabic = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const unicodeShade = [" ", "░", "▒", "█", "▓"]
+const barWave = [
+  '|',
+  '||',
+  '|||',
+  '||||',
+  '|||||',
+  '||||||',
+  '|||||||',
+  '||||||||',
+  '|||||||||',
+  '||||||||||',
+  '|||||||||||',
+  '||||||||||||',
+  '|||||||||||||',
+  '||||||||||||||',
+  '|||||||||||||||',
+]
+const eclipse = ['🌝', '🌕', '🌖', '🌗', '🌘', '🌑', '🌚']
+const numChinese = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十']
+
+const allRepresentation = [
+  emojiHeaven, numArabic, unicodeShade, barWave, eclipse, numChinese,
+]
+let repCounter = 0
+let representation = allRepresentation[repCounter]
+
+setInterval(() => {
+  repCounter ++
+  const repIndex = repCounter % allRepresentation.length
+  representation = allRepresentation[repIndex]
+  // if it's barWave, make font size smaller
+  const cells = document.querySelector('.cell')
+  if (repIndex === 3) {
+    renderGrid.classList.add('smallFont')
+  } else {
+    renderGrid.classList.remove('smallFont')
+  }
+}, 1000 * 5);
 
 // interaction
 const E_POINTER_MOVE = ('ontouchstart' in window) ? 'touchmove' : 'mousemove'

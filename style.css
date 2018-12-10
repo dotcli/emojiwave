@@ -17,12 +17,16 @@ body {
   top: 0;
   left: 0;
   font-family: monospace;
-  font-size: 17px;
+  font-size: 15px;
   letter-spacing: 0.4em;
   line-height: 1em;
   display: inline-block;
-  /* color: #66ff00; */
   pointer-events: none;
+}
+.renderGrid>div { height: 17px; }
+/* for barWave, we need smaller fonts */
+.renderGrid.smallFont {
+  font-size: 10px;
 }
 
 /* For recording 640x640 instagram vid */

@@ -68,11 +68,11 @@ const barWave = [
   '||||||||||||||',
   '|||||||||||||||',
 ]
-const eclipse = ['🌝', '🌕', '🌖', '🌗', '🌘', '🌑', '🌚']
+// const eclipse = ['🌝', '🌕', '🌖', '🌗', '🌘', '🌑', '🌚']
 const numChinese = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十']
 
 const allRepresentation = [
-  emojiHeaven, numArabic, unicodeShade, barWave, eclipse, numChinese,
+  emojiHeaven, numArabic, numChinese, unicodeShade, barWave,
 ]
 let repCounter = 0
 let representation = allRepresentation[repCounter]

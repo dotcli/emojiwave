@@ -101,8 +101,9 @@ canvas.addEventListener(E_POINTER_MOVE, (e) => {
   e.preventDefault()
   if (E_POINTER_MOVE === 'touchmove') {
     e = e.changedTouches[0];
-    e.offsetX = e.pageX - e.target.offsetLeft;
-    e.offsetY = e.pageY - e.target.offsetTop;
+    const boundingRect = e.target.getBoundingClientRect()
+    e.offsetX = e.pageX - boundingRect.left;
+    e.offsetY = e.pageY - boundingRect.top;
   }
   const _x = e.offsetX
   const _y = e.offsetY

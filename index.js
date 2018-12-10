@@ -21,7 +21,7 @@ canvas.setAttribute('width', RESOLUTION)
 canvas.setAttribute('height', RESOLUTION)
 // canvas.style.margin = '10px'
 // canvas.style.background = 'yellow'
-canvas.style.border = '1px solid white'
+// canvas.style.border = '1px solid rgba(255, 255, 255, 50)'
 container.appendChild(canvas)
 
 // our own renderer
